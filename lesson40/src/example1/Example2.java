@@ -2,18 +2,19 @@ package example1;
 
 import java.util.List;
 
-public class Example1 {
+public class Example2 {
     public static void main(String[] args) {
-        List<String> list = List.of("abcde","xyz","wnap");
+        List<String> list = List.of("abc","xyz","dsa");
 
         // java.util.function -> Function<T,R>
         // Function<T,T>  --> UnaryOperator
         // Function<T,Boolean> --> Predicate<T>
 
-        var x =list.stream()
-                .map(s -> s.length())
-                .reduce(0, (a,b) -> a+b);
+      list.stream()
+            .map(s -> new StringBuilder(s).reverse().toString())
+            .forEach(System.out::println);
 
-        System.out.println(x);
+
+
     }
 }
